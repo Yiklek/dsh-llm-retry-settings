@@ -1,0 +1,24 @@
+{
+  "name": "dsh-llm-retry-settings",
+  "version": "0.1.0",
+  "description": "DSH plugin: API retry settings page - view and edit each LLM provider's request retry policy (mode, maxRetries) over the settings wire",
+  "type": "module",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-connection"
+      ],
+      "platform": "web"
+    }
+  }
+}
