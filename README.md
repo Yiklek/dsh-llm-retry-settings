@@ -11,17 +11,14 @@ public settings / llm wire faces.
 - Client-only: the host half is empty; the GUI talks to the loopback API
   gateway exactly like the shipped Models settings page.
 
-Mount (profile `web`): `~/.dsh/profiles/web/package.json` holds the `link:`
-dependency, `cordis.patch.yml` inserts the plugin row.
+This package is a standard dsh bundle plugin: `package.json` declares
+`dsh.bundle.patch` pointing at its `cordis.patch.yml`, so `dsh plugin add`
+automatically adds the package to `dsh.profile.bundles` and loads this plugin's
+own patch layer. No manual edit to `~/.dsh/profiles/web/cordis.patch.yml` is
+needed.
 
 ## 安装
 
 ```sh
 npx @deepseek-ai/dsh plugin --profile web add github:Yiklek/dsh-llm-retry-settings
-```
-
-```yaml
-- insert:
-    - id: llm-retry-settings
-      name: dsh-llm-retry-settings
 ```
