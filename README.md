@@ -14,6 +14,12 @@ public settings / llm wire faces.
 Mount (profile `web`): `~/.dsh/profiles/web/package.json` holds the `link:`
 dependency, `cordis.patch.yml` inserts the plugin row.
 
+## 安装
+
+```sh
+npx @deepseek-ai/dsh plugin --profile web add github:Yiklek/dsh-llm-retry-settings
+```
+
 ```yaml
 - insert:
     - id: llm-retry-settings
