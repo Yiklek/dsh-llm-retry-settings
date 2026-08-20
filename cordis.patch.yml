@@ -1,3 +1,6 @@
 - insert:
     - id: llm-retry-settings
       name: dsh-llm-retry-settings
+      disabled: !!js >-
+        [...ctx.loader.entries()].some((e) => e.options.name === 'dsh-llm-retry-settings' &&
+        e.options.id !== 'llm-retry-settings' && !e.disabled)
